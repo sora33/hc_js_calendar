@@ -8,7 +8,7 @@ function printCalendar(year, month) {
   // 曜日の配列を定義
   const days = ["日", "月", "火", "水", "木", "金", "土"];
   // カレンダーのヘッダーを作成
-  const header = `      ${month}月 ${year}
+  const header = `      ${month + 1 }月 ${year}
  ${days.join(" ")}
 `;
 
@@ -55,7 +55,7 @@ if (args.length === 2 && args[0] === "-m") {
   }
 
   // 指定された月のカレンダーを表示
-  printCalendar(date.getFullYear(), month);
+  printCalendar(date.getFullYear(), month - 1 );
 } else if (args.length === 0) {
   // 引数が指定されない場合、現在の月のカレンダーを表示
   printCalendar(date.getFullYear(), date.getMonth());
